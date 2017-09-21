@@ -62,7 +62,7 @@ module.exports = function dayofweek(year, month, day) {
                 break;
 
             default:
-                throw new Error(`Invalid mode: ${mode}`);
+                throw new Error("Invalid mode: " + mode);
         }
     }
 
