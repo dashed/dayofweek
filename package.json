@@ -1,0 +1,19 @@
+{
+  "name": "dayofweek",
+  "version": "0.1.0",
+  "description": "Get the day of the week.",
+  "main": "index.js",
+  "license": "Unlicense",
+  "scripts": {
+    "pretty": "prettier --write --tab-width 4 'index.js' 'test/**/*.js'",
+    "lint": "eslint ./index.js test",
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && nwb clean-demo",
+    "test": "nwb test-react",
+    "travis": "npm run lint && npm run test",
+    "prepublish": "npm run lint && npm run test && npm run build"
+  },
+  "devDependencies": {
+    "prettier": "^1.7.0"
+  }
+}
