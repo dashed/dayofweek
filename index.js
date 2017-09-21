@@ -3,19 +3,73 @@
 
 var table = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4];
 
-// year > 1752
-// 1 <= month <= 12
-// 1 <= day <= 31
-// Returns: 0=Sun, 1=Mon, ..., 6=Sat
+var LONG = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+];
+var SHORT = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
 module.exports = function dayofweek(year, month, day) {
+    var translate =
+        arguments.length > 3 && arguments[3] !== undefined
+            ? arguments[3]
+            : true;
+
+    // Expect:
+    // year > 1752
+    // 1 <= month <= 12
+    // 1 <= day <= 31
+
     year -= month < 3;
-    return (
+    var day_index =
         (year +
             Math.floor(year / 4) -
             Math.floor(year / 100) +
             Math.floor(year / 400) +
             table[month - 1] +
             day) %
-        7
-    );
-}
+        7;
+
+    // day_index := 0=Sun, 1=Mon, ..., 6=Sat
+
+    if (translate === false) {
+        return day_index;
+    }
+
+    if (translate === true) {
+        return LONG[day_index];
+    }
+
+    if (typeof translate === "function") {
+        return translate(day_index);
+    }
+
+    if (typeof translate === "string") {
+        var mode = translate.toLowerCase();
+
+        switch (mode) {
+            case "long":
+                return LONG[day_index];
+                break;
+
+            case "short":
+                return SHORT[day_index];
+                break;
+
+            default:
+                throw new Error(`Invalid mode: ${mode}`);
+        }
+    }
+
+    if (Array.isArray(translate)) {
+        return translate[day_index];
+    }
+
+    // unsure what translate is, just return day_index
+    return day_index;
+};
