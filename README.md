@@ -1,6 +1,8 @@
 dayofweek [![Build Status](https://travis-ci.org/dashed/dayofweek.svg)](https://travis-ci.org/dashed/dayofweek) [![npm version](https://img.shields.io/npm/v/dayofweek.svg?style=flat)](https://www.npmjs.com/package/dayofweek)
 =========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/dashed/dayofweek.svg)](https://greenkeeper.io/)
+
 > Get the day of the week given year, month, and day.
 >
 > Port of dayofweek function given by Tomohiko Sakamoto on the comp.lang.c Usenet newsgroup
