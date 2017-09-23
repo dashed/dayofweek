@@ -1,4 +1,4 @@
-dayofweek
+dayofweek [![Build Status](https://travis-ci.org/dashed/dayofweek.svg)](https://travis-ci.org/dashed/dayofweek) [![npm version](https://img.shields.io/npm/v/dayofweek.svg?style=flat)](https://www.npmjs.com/package/dayofweek)
 =========
 
 > Get the day of the week given year, month, and day.
