@@ -1,6 +1,8 @@
 dayofweek
 =========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/dashed/dayofweek.svg)](https://greenkeeper.io/)
+
 > Get the day of the week given year, month, and day.
 >
 > Port of dayofweek function given by Tomohiko Sakamoto on the comp.lang.c Usenet newsgroup
