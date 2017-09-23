@@ -32,10 +32,12 @@
   },
   "devDependencies": {
     "ava": "^0.22.0",
+    "babel-eslint": "^8.0.0",
     "eslint": "^4.7.2",
     "prettier": "^1.7.0"
   },
   "eslintConfig": {
+    "parser": "babel-eslint",
     "env": {
       "browser": true,
       "node": true,
