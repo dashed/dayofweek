@@ -55,11 +55,9 @@ module.exports = function dayofweek(year, month, day) {
         switch (mode) {
             case "long":
                 return LONG[day_index];
-                break;
 
             case "short":
                 return SHORT[day_index];
-                break;
 
             default:
                 throw new Error("Invalid mode: " + mode);
